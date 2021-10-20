@@ -154,12 +154,12 @@ def openFile(filepath):
 	prevBut.config(state = NORMAL)
 	nextBut.config(state = NORMAL)
 
-### Barra de direcciones: ###
+### Adresses Bar: ###
 fileBar = Frame(root, bg=colors['backgroundColor'])
-fileLabel = ttk.Label(fileBar, anchor="nw", text="Archivo:")
+fileLabel = ttk.Label(fileBar, anchor="nw", text="File:")
 
 autoDecompressCheck = Checkbutton(fileBar, 
-									text="Auto-descomprimir", 
+									text="Auto-Decompress", 
 									variable=autoDecompress, 
 									font='Consolas 8 bold', 
 									relief=FLAT, 
@@ -169,7 +169,7 @@ autoDecompressCheck = Checkbutton(fileBar,
 									activeforeground=colors['backgroundColor']
 									)
 
-#Barra de direccion:
+#Adress bar:
 fileLocationBorder1 = Frame(fileBar, bg=colors['backgroundColor'])
 fileLocationBorder2 = Frame(fileLocationBorder1, bd=1, bg=colors['detailColor'])
 fileLocation = Entry(fileLocationBorder2,
@@ -186,10 +186,10 @@ fileLocation = Entry(fileLocationBorder2,
 
 fileLocation.bind('<Return>', lambda event:openFile(fileLocation.get()))
 
-#Boton para abrir el archivo:
+#Button to open the file:
 openFileButBorder1 = Frame(fileBar, bg=colors['backgroundColor'])
 openFileButBorder2 = Frame(openFileButBorder1, bd=1, bg=colors['detailColor'])
-openFileBut = ttk.Button(openFileButBorder2,text="Abrir",command=lambda:openFile(fileLocation.get()))
+openFileBut = ttk.Button(openFileButBorder2,text="Open",command=lambda:openFile(fileLocation.get()))
 
 fileBar.pack(pady=10, padx=5, fill=X)
 autoDecompressCheck.grid(padx=(2, 10), row=0, column=0, sticky='w')
@@ -203,7 +203,7 @@ openFileButBorder1.grid(padx=2, row=0, column=3, sticky='e')
 openFileButBorder2.pack()
 openFileBut.pack()
 
-### FRAME CON EL ARRAY DE ENTRIES: ###
+### FRAME WITH THE ENTRIES ARRAY: ###
 container = ttk.Frame(root, width=1020, height=650)
 canvas = Canvas(container, width=1020, height=650, bg=colors['backgroundColor'])
 scrollbar = ttk.Scrollbar(container, orient="vertical", command=canvas.yview)
@@ -230,14 +230,14 @@ container.pack(fill="both", expand=True)
 canvas.pack(side="left", fill="both", expand=True)
 scrollbar.pack(side="right", fill="y")
 
-### BOTON DE GUARDADO DE ARCHIVO: ###
+### FILE SAVE BUTTON: ###
 bottomFrame = Frame(root,  bg=colors['backgroundColor'])
 
 saveButBorder1 = Frame(bottomFrame, bg=colors['backgroundColor'])
 saveButBorder2 = Frame(saveButBorder1, bd=1, bg=colors['detailColor'])
-saveBut = ttk.Button(saveButBorder2,text="Guardar",command=lambda:saveButton(fileLocation.get()))
+saveBut = ttk.Button(saveButBorder2,text="Save",command=lambda:saveButton(fileLocation.get()))
 
-# Menu para cambiar de pagina:
+# Menu to change pages:
 pageButtonsFrame = Frame(bottomFrame, bg=colors['backgroundColor'])
 
 prevButBorder1 = Frame(pageButtonsFrame, bg=colors['backgroundColor'])
